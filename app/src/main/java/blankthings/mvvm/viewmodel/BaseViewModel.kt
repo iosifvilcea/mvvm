@@ -1,4 +1,5 @@
 package blankthings.mvvm.viewmodel
 
-class BaseViewModel {
-}
+import androidx.lifecycle.ViewModel
+
+abstract class BaseViewModel : ViewModel()
