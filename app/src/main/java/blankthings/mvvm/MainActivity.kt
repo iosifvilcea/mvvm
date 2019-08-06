@@ -3,19 +3,40 @@ package blankthings.mvvm
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ProgressBar
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import blankthings.mvvm.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var loadingDialog: AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        loadingDialog = AlertDialog.Builder(this)
+            .setView(ProgressBar(this))
+            .setCancelable(false)
+            .create()
+
+        val mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        mainViewModel.loadingLiveData.observe(this, Observer<Boolean> {showLoadingDialog(it)})
+
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.add(R.id.content_view, HomeFragment())
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
+    }
+
+    private fun showLoadingDialog(show: Boolean) {
+        if (show) {
+            loadingDialog.show()
+        } else {
+            loadingDialog.dismiss()
         }
     }
 
