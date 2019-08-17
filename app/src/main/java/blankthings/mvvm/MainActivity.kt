@@ -26,10 +26,12 @@ class MainActivity : AppCompatActivity() {
         val mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         mainViewModel.loadingLiveData.observe(this, Observer<Boolean> {showLoadingDialog(it)})
 
-        val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.add(R.id.content_view, HomeFragment())
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
+        supportFragmentManager.beginTransaction()
+            .apply {
+                add(R.id.content_view, HomeFragment())
+                addToBackStack(null)
+                commit()
+            }
     }
 
     private fun showLoadingDialog(show: Boolean) {
