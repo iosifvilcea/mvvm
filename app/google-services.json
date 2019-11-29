@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "863012810677",
+    "firebase_url": "https://chitos-6aa10.firebaseio.com",
+    "project_id": "chitos-6aa10",
+    "storage_bucket": "chitos-6aa10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863012810677:android:13bc6b5848ebc66b8033fc",
+        "android_client_info": {
+          "package_name": "blankthings.mvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863012810677-91nhvubkq4fqkcbo52d9o36ju5gljdvi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGTyS1fo-mLlEFlQ742wEbcinhJ8FFAyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863012810677-91nhvubkq4fqkcbo52d9o36ju5gljdvi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

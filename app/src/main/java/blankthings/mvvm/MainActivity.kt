@@ -8,6 +8,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import blankthings.mvvm.view.HomeFragment
 import blankthings.mvvm.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +25,9 @@ class MainActivity : AppCompatActivity() {
             .create()
 
         val mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        mainViewModel.loadingLiveData.observe(this, Observer<Boolean> {showLoadingDialog(it)})
+        mainViewModel.loadingLiveData.observe(this, Observer<Boolean> {
+            showLoadingDialog(it)
+        })
 
         supportFragmentManager.beginTransaction()
             .apply {
