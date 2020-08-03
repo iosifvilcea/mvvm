@@ -95,7 +95,10 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:$glide_version"
 
     // Firebase DB
-    implementation 'com.google.firebase:firebase-database-ktx:19.2.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:21.3.0'
+
+    // Firebase Analytics
+    implementation 'com.google.firebase:firebase-analytics:17.2.1'
 
     //Testing
     testImplementation 'junit:junit:4.12'

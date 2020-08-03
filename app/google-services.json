@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:863012810677:android:13bc6b5848ebc66b8033fc",
+        "mobilesdk_app_id": "1:863012810677:android:5f13f06cdd7030118033fc",
         "android_client_info": {
           "package_name": "blankthings.mvvm"
         }
